@@ -1223,6 +1223,8 @@ public class TronJsonRpcImpl implements TronJsonRpc {
     List<Long> possibleBlockList = logBlockQuery.getPossibleBlock();
 
 
+    logger.info("[WNH] possibleBlockList {}",possibleBlockList.size());
+
     for (byte[] address : logFilterWrapper.getLogFilter().getContractAddresses()) {
      logger.info("[WNH] address {}",address);
     }
