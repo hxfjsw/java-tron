@@ -14,10 +14,8 @@ import static org.tron.core.services.jsonrpc.JsonRpcApiUtil.triggerCallContract;
 import com.alibaba.fastjson.JSON;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.GeneratedMessageV3;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
@@ -1227,7 +1225,13 @@ public class TronJsonRpcImpl implements TronJsonRpc {
     LogBlockQuery logBlockQuery = new LogBlockQuery(logFilterWrapper, manager.getChainBaseManager()
         .getSectionBloomStore(), currentMaxBlockNum, sectionExecutor);
 
-    List<Long> possibleBlockList = logBlockQuery.getPossibleBlock();
+    List<Long> possibleBlockList = new ArrayList<>();
+
+    for(long i=logFilterWrapper.getFromBlock() ;i<logFilterWrapper.getToBlock();i++){
+      possibleBlockList.add(i);
+    }
+
+//    List<Long> possibleBlockList = logBlockQuery.getPossibleBlock();
 
     logger.info("[WNH] real possibleBlockList size = {}", possibleBlockList.size());
 
