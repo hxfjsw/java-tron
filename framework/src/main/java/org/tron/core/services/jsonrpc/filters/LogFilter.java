@@ -161,7 +161,10 @@ public class LogFilter {
     //not have 41 ahead both
     for (byte[] address : contractAddresses) {
       if (Arrays.equals(address, toAddr)) {
+        logger.info("matchesContractAddress address={} ,toAddr={} true",address, toAddr);
         return true;
+      }else{
+        logger.info("matchesContractAddress address={} ,toAddr={} false",address, toAddr);
       }
     }
     return contractAddresses.length == 0;

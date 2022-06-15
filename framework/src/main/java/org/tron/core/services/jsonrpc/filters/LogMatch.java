@@ -85,13 +85,13 @@ public class LogMatch {
       throws BadItemException, ItemNotFoundException, JsonRpcTooManyResultException {
     List<LogFilterElement> logFilterElementList = new ArrayList<>();
 
-    logger.info("[WNH] start at :" + Thread.currentThread().getName());
+//    logger.info("[WNH] start at :" + Thread.currentThread().getName());
 //    logger.info("[WNH] trace at :" + Arrays.toString(Thread.currentThread().getStackTrace()));
 
 
     for (long blockNum : blockNumList) {
 
-      logger.info("[WNH] blockNum {}",blockNum);
+//      logger.info("[WNH] blockNum {}",blockNum);
 
       TransactionRetCapsule transactionRetCapsule =
           manager.getTransactionRetStore()
@@ -104,7 +104,7 @@ public class LogMatch {
       TransactionRet transactionRet = transactionRetCapsule.getInstance();
       List<TransactionInfo> transactionInfoList = transactionRet.getTransactioninfoList();
 
-      logger.info("[WNH] TransactionInfo count {}",transactionInfoList.size());
+//      logger.info("[WNH] TransactionInfo count {}",transactionInfoList.size());
 
       String blockHash = manager.getChainBaseManager().getBlockIdByNum(blockNum).toString();
       List<LogFilterElement> matchedLog = matchBlock(logFilterWrapper.getLogFilter(), blockNum,
