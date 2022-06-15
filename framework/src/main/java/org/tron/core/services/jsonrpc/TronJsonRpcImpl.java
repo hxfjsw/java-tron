@@ -1184,7 +1184,7 @@ public class TronJsonRpcImpl implements TronJsonRpc {
             ExecutionException, InterruptedException, BadItemException, ItemNotFoundException,
             JsonRpcMethodNotFoundException, JsonRpcTooManyResultException {
 
-        logger.info("[WNH] from {} to {}", fr.getFromBlock(), fr.getToBlock());
+        logger.info("[WNH] from "+ fr.getFromBlock()+":"+ fr.getToBlock());
 
         disableInPBFT("eth_getLogs");
 
