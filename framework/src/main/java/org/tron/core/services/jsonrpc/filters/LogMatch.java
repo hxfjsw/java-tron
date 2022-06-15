@@ -2,6 +2,7 @@ package org.tron.core.services.jsonrpc.filters;
 
 import com.google.protobuf.ByteString;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.tron.common.runtime.vm.DataWord;
@@ -85,7 +86,7 @@ public class LogMatch {
     List<LogFilterElement> logFilterElementList = new ArrayList<>();
 
     logger.info("[WNH] start at :" + Thread.currentThread().getName());
-    logger.info("[WNH] trace at :" + Thread.currentThread().getStackTrace());
+    logger.info("[WNH] trace at :" + Arrays.toString(Thread.currentThread().getStackTrace()));
 
 
     for (long blockNum : blockNumList) {
