@@ -41,6 +41,8 @@ public class LogMatch {
   public static List<LogFilterElement> matchBlock(LogFilter logFilter, long blockNum,
       String blockHash, List<TransactionInfo> transactionInfoList, boolean removed) {
 
+//    logger.info("[WNH] matchBlock");
+
     int txCount = transactionInfoList.size();
     List<LogFilterElement> matchedLog = new ArrayList<>();
     int logIndexInBlock = 0;
