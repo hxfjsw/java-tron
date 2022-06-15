@@ -84,7 +84,7 @@ public class LogMatch {
       throws BadItemException, ItemNotFoundException, JsonRpcTooManyResultException {
     List<LogFilterElement> logFilterElementList = new ArrayList<>();
 
-    logger.info("[WNH] start at {},stack {}",Thread.currentThread().getName(),Thread.getAllStackTraces());
+    logger.info("[WNH] start at {}",Thread.currentThread().getName());
 
 
     for (long blockNum : blockNumList) {
