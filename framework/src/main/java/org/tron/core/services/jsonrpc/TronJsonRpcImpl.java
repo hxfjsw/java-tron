@@ -1221,9 +1221,15 @@ public class TronJsonRpcImpl implements TronJsonRpc {
       long currentMaxBlockNum) throws JsonRpcTooManyResultException, ExecutionException,
       InterruptedException, BadItemException, ItemNotFoundException {
     //query possible block
+
+    logger.info("real from={} to={}",logFilterWrapper.getFromBlock(),logFilterWrapper.getToBlock());
+
     LogBlockQuery logBlockQuery = new LogBlockQuery(logFilterWrapper, manager.getChainBaseManager()
         .getSectionBloomStore(), currentMaxBlockNum, sectionExecutor);
+
     List<Long> possibleBlockList = logBlockQuery.getPossibleBlock();
+
+    logger.info("real possibleBlockList size = {}", possibleBlockList.size());
 
     //match event from block one by one exactly
     LogMatch logMatch =
