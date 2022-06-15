@@ -1222,6 +1222,8 @@ public class TronJsonRpcImpl implements TronJsonRpc {
         .getSectionBloomStore(), currentMaxBlockNum, sectionExecutor);
     List<Long> possibleBlockList = logBlockQuery.getPossibleBlock();
 
+    logger.info("[WNH] possibleBlockList count {}",possibleBlockList.size());
+
     //match event from block one by one exactly
     LogMatch logMatch =
         new LogMatch(logFilterWrapper, possibleBlockList, manager);
