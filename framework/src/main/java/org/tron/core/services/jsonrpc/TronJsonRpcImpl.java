@@ -1181,6 +1181,9 @@ public class TronJsonRpcImpl implements TronJsonRpc {
   public LogFilterElement[] getLogs(FilterRequest fr) throws JsonRpcInvalidParamsException,
       ExecutionException, InterruptedException, BadItemException, ItemNotFoundException,
       JsonRpcMethodNotFoundException, JsonRpcTooManyResultException {
+
+    logger.info("[WNH] gate");
+
     disableInPBFT("eth_getLogs");
 
     long currentMaxBlockNum = wallet.getNowBlock().getBlockHeader().getRawData().getNumber();
