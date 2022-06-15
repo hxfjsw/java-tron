@@ -1181,6 +1181,9 @@ public class TronJsonRpcImpl implements TronJsonRpc {
   public LogFilterElement[] getLogs(FilterRequest fr) throws JsonRpcInvalidParamsException,
       ExecutionException, InterruptedException, BadItemException, ItemNotFoundException,
       JsonRpcMethodNotFoundException, JsonRpcTooManyResultException {
+
+    logger.info("[WNH] from {} to {}",fr.getFromBlock(),fr.getToBlock());
+
     disableInPBFT("eth_getLogs");
 
     long currentMaxBlockNum = wallet.getNowBlock().getBlockHeader().getRawData().getNumber();
@@ -1221,12 +1224,6 @@ public class TronJsonRpcImpl implements TronJsonRpc {
     LogBlockQuery logBlockQuery = new LogBlockQuery(logFilterWrapper, manager.getChainBaseManager()
         .getSectionBloomStore(), currentMaxBlockNum, sectionExecutor);
     List<Long> possibleBlockList = logBlockQuery.getPossibleBlock();
-
-
-//    for (byte[] address : logFilterWrapper.getLogFilter().getContractAddresses()) {
-//     logger.info("[WNH] address {}",addres);
-//    }
-
 
     //match event from block one by one exactly
     LogMatch logMatch =
