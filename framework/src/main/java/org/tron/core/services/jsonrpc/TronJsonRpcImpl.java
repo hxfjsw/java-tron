@@ -1227,7 +1227,7 @@ public class TronJsonRpcImpl implements TronJsonRpc {
 
     List<Long> possibleBlockList = new ArrayList<>();
 
-    for(long i=logFilterWrapper.getFromBlock() ;i<logFilterWrapper.getToBlock();i++){
+    for(long i=logFilterWrapper.getFromBlock() ;i<=logFilterWrapper.getToBlock();i++){
       possibleBlockList.add(i);
     }
 
