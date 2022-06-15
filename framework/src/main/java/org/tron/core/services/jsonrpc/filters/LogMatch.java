@@ -83,6 +83,9 @@ public class LogMatch {
     List<LogFilterElement> logFilterElementList = new ArrayList<>();
 
     for (long blockNum : blockNumList) {
+
+      logger.info("[WNH] possibleBlockList blockNum {}",blockNum);
+
       TransactionRetCapsule transactionRetCapsule =
           manager.getTransactionRetStore()
               .getTransactionInfoByBlockNum(ByteArray.fromLong(blockNum));
