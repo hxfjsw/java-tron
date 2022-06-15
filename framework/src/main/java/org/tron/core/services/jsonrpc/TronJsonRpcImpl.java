@@ -1233,9 +1233,9 @@ public class TronJsonRpcImpl implements TronJsonRpc {
 
     logger.info("[WNH] possibleBlockList {}",possibleBlockList.size());
 
-    for (byte[] address : logFilterWrapper.getLogFilter().getContractAddresses()) {
-     logger.info("[WNH] address {}",address);
-    }
+//    for (byte[] address : logFilterWrapper.getLogFilter().getContractAddresses()) {
+//     logger.info("[WNH] address {}",address);
+//    }
 
 
     //match event from block one by one exactly
