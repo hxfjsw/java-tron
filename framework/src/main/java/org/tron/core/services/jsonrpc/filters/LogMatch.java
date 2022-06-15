@@ -85,6 +85,7 @@ public class LogMatch {
     List<LogFilterElement> logFilterElementList = new ArrayList<>();
 
     logger.info("[WNH] start at :" + Thread.currentThread().getName());
+    logger.info("[WNH] trace at :" + Thread.currentThread().getStackTrace());
 
 
     for (long blockNum : blockNumList) {
