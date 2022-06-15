@@ -1222,14 +1222,14 @@ public class TronJsonRpcImpl implements TronJsonRpc {
       InterruptedException, BadItemException, ItemNotFoundException {
     //query possible block
 
-    logger.info("real from={} to={}",logFilterWrapper.getFromBlock(),logFilterWrapper.getToBlock());
+    logger.info("[WNH] real from={} to={}",logFilterWrapper.getFromBlock(),logFilterWrapper.getToBlock());
 
     LogBlockQuery logBlockQuery = new LogBlockQuery(logFilterWrapper, manager.getChainBaseManager()
         .getSectionBloomStore(), currentMaxBlockNum, sectionExecutor);
 
     List<Long> possibleBlockList = logBlockQuery.getPossibleBlock();
 
-    logger.info("real possibleBlockList size = {}", possibleBlockList.size());
+    logger.info("[WNH] real possibleBlockList size = {}", possibleBlockList.size());
 
     //match event from block one by one exactly
     LogMatch logMatch =
